@@ -31,7 +31,12 @@ import createTheme from "./themes/adaptive";
 // Require CSS
 require("normalize.css");
 require("./themes/adaptive/index.css");
-// preloader(images);
+
+const images = {
+  storybook: require("./assets/storybook-loaded.png")
+};
+
+preloader(images);
 
 const theme = createTheme();
 
@@ -108,6 +113,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
+            <Text>Supports React Native</Text>
+          </Slide>
+
+          <Slide transition={["zoom"]} bgColor="primary">
             <Text>Showcase your components</Text>
           </Slide>
 
@@ -131,9 +140,10 @@ export default class Presentation extends React.Component {
             <Text size={2}>
               Add an npm script to your package.json
               <br /><br />
-              <code>
+              <Markdown>{`
                   "workbench": "start-storybook -p 9001"
-                </code>
+              `}
+              </Markdown>
             </Text>
             <br />
             <Text size={3}>Note: The port does not have to be 9001.</Text>
@@ -196,6 +206,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
+            <Markdown source={`![Storybook Loaded](${images.storybook.replace("/", "")})`} />
+
+          </Slide>
+
+          <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Demo Time
             </Heading>
@@ -253,6 +268,7 @@ export default class Presentation extends React.Component {
                 <ListItem>
                   Thanks to <Link href='https://github.com/arunoda' target='_blank'>Arunoda</Link> and the entire <Link href='https://github.com/kadirahq' target='_blank'>Kadira</Link> team for their massive contributions to Meteor JS and React.
                 </ListItem>
+                <ListItem>And a big thank you to Arunoda for reviewing the slide deck.</ListItem>
               </List>
             </Text>
           </Slide>
