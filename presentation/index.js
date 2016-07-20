@@ -69,7 +69,7 @@ export default class Presentation extends React.Component {
               What We'll Cover
             </Heading>
             <List>
-              <ListItem>An overview or React Storybook</ListItem>
+              <ListItem>An overview of React Storybook</ListItem>
               <ListItem>Setting up React Storybook</ListItem>
               <ListItem>A demo of React Storybook in action</ListItem>
               <ListItem>
@@ -84,7 +84,7 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
-              An overview or React Storybook
+              An Overview of React Storybook
             </Heading>
           </Slide>
 
@@ -276,6 +276,16 @@ export default class Presentation extends React.Component {
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Questions?
+            </Heading>
+          </Slide>
+
+          <Slide>
+            <Heading size={2} fit caps lineHeight={1}>
+              <Link href='http://weareadaptive.com' target='_blank'>weareadaptive.com</Link>
+            </Heading>
+            <br />
+            <Heading size={2} fit caps lineHeight={1}>
+              Twitter <Link href='https://twitter.com/weareadaptive' target='_blank'>@weareadaptive</Link>
             </Heading>
           </Slide>
         </Deck>
