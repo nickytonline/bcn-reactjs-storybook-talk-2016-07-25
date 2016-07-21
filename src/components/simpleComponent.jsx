@@ -4,7 +4,8 @@ const defaultStyle = {
   width: '20rem',
   height: '10rem',
   fontSize: '2rem',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  color: '#000000'
 }
 
 const disabledStyle = Object.assign({}, defaultStyle, {

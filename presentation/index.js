@@ -28,6 +28,8 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "./themes/adaptive";
 
+import SimpleComponent from '../src/components/simpleComponent.jsx';
+
 // Require CSS
 require("normalize.css");
 require("./themes/adaptive/index.css");
@@ -217,6 +219,20 @@ export default class Presentation extends React.Component {
             <Text size={1} fit lineHeight={1}>
               <Link href='http://localhost:9001' target='storybook'>http://localhost:9001</Link>
             </Text>
+          </Slide>
+
+          <Slide transition={["zoom"]} bgColor="primary">
+            <Heading size={1} fit caps lineHeight={1}>
+              Use Storybook to edit components of the slide deck
+            </Heading>
+            <br />
+            <Text>
+              <SimpleComponent>I'm the button<br />you saw in the demo</SimpleComponent>&nbsp;&nbsp;<SimpleComponent disabled={true}>I'm the disabled button<br />you saw in the demo</SimpleComponent>
+            </Text>
+            <br />
+            <Heading size={2} fit caps lineHeight={1}>
+              That's right... this slide deck is a React application. Boom... mind blown.
+            </Heading>
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
