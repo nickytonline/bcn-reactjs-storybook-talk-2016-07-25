@@ -175,7 +175,7 @@ const screen = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
       codePane: {
         pre: {
           margin: 'auto',
-          fontSize: '0.8rem',
+          fontSize: '1.8rem',
           fontWeight: 'normal',
           fontFamily: fonts.tertiary,
           minWidth: '100%',

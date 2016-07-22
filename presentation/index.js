@@ -133,19 +133,20 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
-            <Text size={1} fit lineHeight={1}>
-              Install React Storybook, <code>npm i @kadira/storybook --save-dev</code>
+            <Text>
+              Install React Storybook
             </Text>
+            <br />
+            <CodePane>npm i @kadira/storybook --save-dev</CodePane>
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
             <Text size={2}>
               Add an npm script to your package.json
               <br /><br />
-              <Markdown>{`
+              <CodePane>
                   "workbench": "start-storybook -p 9001"
-              `}
-              </Markdown>
+              </CodePane>
             </Text>
             <br />
             <Text size={3}>Note: The port does not have to be 9001.</Text>
@@ -166,17 +167,16 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["zoom"]} bgColor="primary">
             <Text>Add the following code to config.js and save it</Text>
-            <Markdown>
-            {`
-              import { configure } from '@kadira/storybook';
+            <br />
+            <CodePane>{`
+import { configure } from '@kadira/storybook';
 
-              function loadStories() {
-                  require('../workbench/');
-              }
+function loadStories() {
+    require('../workbench/');
+}
 
-              configure(loadStories, module);
-            `}
-            </Markdown>
+configure(loadStories, module);
+            `}</CodePane>
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
@@ -188,23 +188,31 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["zoom"]} bgColor="primary">
             <Text>Add the following code to index.js and save it.</Text>
-            <Markdown>
-            {`
-              import {storiesOf,action} from '@kadira/storybook';
-              import React from 'react';
-              import SimpleComponent from '../src/components/simpleComponent.jsx';
+            <br />
+            <CodePane fit>{`
+import {storiesOf,action} from '@kadira/storybook';
+import React from 'react';
+import SimpleComponent
+  from '../src/components/simpleComponent.jsx';
 
-              storiesOf('SimpleComponent', module)
-                  .add('default', () => <SimpleComponent onClick={action('clicked')}>Click Me</SimpleComponent>);
+storiesOf('SimpleComponent', module)
+  .add('default',
+    () => <SimpleComponent onClick={action('clicked')}>
+            Click Me</SimpleComponent>);
             `}
-            </Markdown>
+            </CodePane>
+            <br />
             <Text>You've created your first story.</Text>
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
-            <Text size={1} fit lineHeight={1}>
-              Now run, <code>npm run workbench</code> and open a browser at <Link href='http://localhost:9001' target='storybook'>http://localhost:9001</Link>.
+            <Text>
+              Now run...
             </Text>
+            <br />
+            <CodePane>npm run workbench</CodePane>
+            <br />
+            <Text>and open a browser at <Link href='http://localhost:9001' target='storybook'>http://localhost:9001</Link></Text>
           </Slide>
 
           <Slide transition={["zoom"]} bgColor="primary">
@@ -267,7 +275,7 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1}>
               Source Code and Slides
             </Heading>
-            <Text fit>
+            <Text size={1} fit lineHeight={1}>
               <Link href='https://github.com/nickytonline/bcn-reactjs-storybook-talk-2016-07-25' target='_blank'>https://github.com/nickytonline/bcn-reactjs-storybook-talk-2016-07-25</Link>
             </Text>
           </Slide>
@@ -299,10 +307,18 @@ export default class Presentation extends React.Component {
             <Heading size={2} fit caps lineHeight={1}>
               <Link href='http://weareadaptive.com' target='_blank'>weareadaptive.com</Link>
             </Heading>
-            <br />
+            <br /><br /><br /><br />
             <Heading size={2} fit caps lineHeight={1}>
               Twitter <Link href='https://twitter.com/weareadaptive' target='_blank'>@weareadaptive</Link>
             </Heading>
+            <br />
+            <Heading size={1} fit caps lineHeight={1}>
+              Github <Link href='https://github.com/AdaptiveConsulting' target='_blank'>AdaptiveConsulting</Link>
+            </Heading>
+            <br />
+            <Text fit>
+              <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>https://github.com/AdaptiveConsulting/ReactiveTraderCloud</Link>
+            </Text>
           </Slide>
         </Deck>
       </Spectacle>
