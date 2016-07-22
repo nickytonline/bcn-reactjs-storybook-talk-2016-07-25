@@ -13,7 +13,7 @@ const defaultFonts = {
   tertiary: "monospace"
 };
 
-const logo = require('../../assets/adaptive_logo1.png');
+const logo = require('../../assets/adaptive-logo.svg');
 
 const print = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
   const colors = Object.assign({}, defaultColors, colorArgs);
@@ -38,7 +38,7 @@ const print = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
         color: "black !important"
       },
       '.spectacle-slide': {
-        background: `url(${logo}) no-repeat fixed 20px 20px`,
+        background: `url(${logo}) no-repeat fixed 30px 30px`
       }
     },
     fullscreen: {
