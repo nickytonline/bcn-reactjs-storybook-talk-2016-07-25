@@ -111,8 +111,9 @@ export default class Presentation extends React.Component {
               <ListItem>Extensions</ListItem>
               <ListItem>Customizable</ListItem>
               <ListItem>Runs anywhere</ListItem>
-              <ListItem>Showcase your components (<Link href='https://storybooks.io'
-                target='storybook'>https://storybooks.io</Link>)</ListItem>
+              <ListItem>Showcase your components (<Link href='https://github.io'
+                                                        target='storybook'>github.io</Link>, <Link href='https://storybooks.io'
+                target='storybook'>storybooks.io</Link>...)</ListItem>
               <ListItem>Supports React Native</ListItem>
             </List>
           </Slide>
@@ -271,6 +272,9 @@ storiesOf('SimpleComponent', module)
                   The Kadira team <Link href='https://github.com/kadirahq' target='_blank'>github.com/kadirahq</Link>
                 </ListItem>
                 <ListItem>Arunoda <Link href='https://github.com/arunoda' target='_blank'>github.com/arunoda</Link></ListItem>
+                <ListItem>
+                  Reactive trader <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>git.io/vKyVG</Link>
+                </ListItem>
               </List>
             </Text>
           </Slide>
@@ -294,10 +298,6 @@ storiesOf('SimpleComponent', module)
             <br />
             <Text>
               Github <Link href='https://github.com/AdaptiveConsulting' target='_blank'>AdaptiveConsulting</Link>
-            </Text>
-            <br />
-            <Text>
-              Reactive trader <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>git.io/vKyVG</Link>
             </Text>
           </Slide>
 
