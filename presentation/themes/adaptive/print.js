@@ -157,9 +157,9 @@ const print = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
         paddingLeft: 40,
         display: "block",
         color: "black",
-        fontSize: "4.9rem",
+        fontSize: "2.2rem",
         lineHeight: 1,
-        fontWeight: "bold"
+        fontWeight: "normal"
       },
       cite: {
         color: "black",
