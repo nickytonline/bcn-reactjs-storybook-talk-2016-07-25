@@ -49,15 +49,15 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "zoom"]} transitionDuration={500}>
-          <Slide transition={["zoom"]} bgColor="primary">
+        <Deck transition={["slide", "slide"]} transitionDuration={200}>
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               React Storybook
             </Heading>
             <Text>React JS Barcelona Meetup, July 25th, 2016</Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading caps lineHeight={1}>
               The Problems
             </Heading>
@@ -70,7 +70,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading caps lineHeight={1}>
               The solution
             </Heading>
@@ -78,7 +78,7 @@ export default class Presentation extends React.Component {
             <Image height={400} src={images.storybookDemo}/>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <BlockQuote size={1}>
               <Quote>With React Storybook, you can develop and design UI components outside your app in an isolated
                 environment. It will change how you develop UI components.</Quote>
@@ -86,7 +86,7 @@ export default class Presentation extends React.Component {
             </BlockQuote>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} caps lineHeight={1}>
               Demo Time
             </Heading>
@@ -95,7 +95,7 @@ export default class Presentation extends React.Component {
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading>Key benefits</Heading>
             <List>
               <ListItem>Isolation</ListItem>
@@ -105,24 +105,25 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading>Plus</Heading>
             <List>
               <ListItem>Extensions</ListItem>
               <ListItem>Customizable</ListItem>
+              <ListItem>Runs anywhere</ListItem>
               <ListItem>Showcase your components (<Link href='https://storybooks.io'
                 target='storybook'>https://storybooks.io</Link>)</ListItem>
               <ListItem>Supports React Native</ListItem>
             </List>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Setting up React Storybook
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Text>
               Install React Storybook
             </Text>
@@ -130,7 +131,7 @@ export default class Presentation extends React.Component {
             <CodePane>npm install @kadira/storybook --save-dev</CodePane>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Text size={2}>
               Add an npm script to your package.json
               <br /><br />
@@ -140,60 +141,56 @@ export default class Presentation extends React.Component {
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Configure React Storybook
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <List>
               <ListItem>Create a folder in the root of your project called <code>.storybook</code></ListItem>
               <ListItem>In that folder create a file called <code>config.js</code></ListItem>
             </List>
           </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Add the following code to config.js and save it</Text>
+          <Slide bgColor="primary">
+            <Text>.storybook/config.js</Text>
             <br />
-            <CodePane>{`
-import { configure } from '@kadira/storybook';
+            <CodePane>
+{`import { configure } from '@kadira/storybook';
 
 function loadStories() {
     require('../workbench/');
 }
 
 configure(loadStories, module);
-            `}</CodePane>
+`}</CodePane>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <List>
               <ListItem>Create a folder in the root of your project called <code>workbench</code></ListItem>
               <ListItem>In that folder create a file called <code>index.js</code></ListItem>
             </List>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Add the following code to index.js and save it.</Text>
+          <Slide bgColor="primary">
+            <Text>workbench/index.js</Text>
             <br />
-            <CodePane fit>{`
-import {storiesOf,action} from '@kadira/storybook';
+            <CodePane>
+{`import {storiesOf,action} from '@kadira/storybook';
 import React from 'react';
 import SimpleComponent
   from '../src/components/simpleComponent.jsx';
 
 storiesOf('SimpleComponent', module)
-  .add('default',
-    () => <SimpleComponent onClick={action('clicked')}>
-            Click Me</SimpleComponent>);
-            `}
+  .add('default', () =>
+    <SimpleComponent onClick={action('clicked')}>
+            Click Me</SimpleComponent>);`}
             </CodePane>
-            <br />
-            <Text>You've created your first story.</Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Text>
               Now run...
             </Text>
@@ -204,11 +201,11 @@ storiesOf('SimpleComponent', module)
                                               target='storybook'>http://localhost:9001</Link></Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Image height={500} src={images.storybook} />
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} caps lineHeight={1}>
               And this?
             </Heading>
@@ -219,29 +216,33 @@ storiesOf('SimpleComponent', module)
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Image height={300} src={images.surprise} />
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Does Anyone Else Do What Storybook Does?
+          <Slide bgColor="primary">
+            <Heading size={1} caps lineHeight={1}>
+              Alternative tools
             </Heading>
             <br />
             <Text>
-              Carte Blanche, <Link
+              UI Harness <Link href='http://www.uiharness.com/' target="_blank">www.uiharness.com</Link>
+            </Text>
+            <br />
+            <Text>
+              Carte Blanche <Link
               href='https://github.com/carteb/carte-blanche'
-              target='_blank'>https://github.com/carteb/carte-blanche</Link>.
+              target='_blank'>github.com/carteb/carte-blanche</Link>.
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Why We Chose Storybook?
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Source Code and Slides
             </Heading>
@@ -252,11 +253,11 @@ storiesOf('SimpleComponent', module)
             </Text>
             <br />
             <Text size={1} fit lineHeight={1}>
-              Download the source code and slides from <Link href='https://git.io/vKywa' target='_blank'>https://git.io/vKywa</Link>
+              Download the source code and slides from <Link href='https://git.io/vKywa' target='_blank'>git.io/vKywa</Link>
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading caps>
               Thanks OSS
             </Heading>
@@ -264,17 +265,17 @@ storiesOf('SimpleComponent', module)
               <List>
                 <ListItem>
                   Spectacle <Link
-                  href='https://github.com/FormidableLabs/spectacle' target='_blank'>https://github.com/FormidableLabs/spectacle</Link>.
+                  href='https://github.com/FormidableLabs/spectacle' target='_blank'>github.com/FormidableLabs/spectacle</Link>
                 </ListItem>
                 <ListItem>
-                  The Kadira team <Link href='https://github.com/kadirahq' target='_blank'>https://github.com/kadirahq</Link>
+                  The Kadira team <Link href='https://github.com/kadirahq' target='_blank'>github.com/kadirahq</Link>
                 </ListItem>
-                <ListItem>Arunoda <Link href='https://github.com/arunoda' target='_blank'>https://github.com/arunoda</Link></ListItem>
+                <ListItem>Arunoda <Link href='https://github.com/arunoda' target='_blank'>github.com/arunoda</Link></ListItem>
               </List>
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Questions?
             </Heading>
@@ -296,7 +297,7 @@ storiesOf('SimpleComponent', module)
             </Text>
             <br />
             <Text>
-              Reactive trader <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>https://git.io/vKyVG</Link>
+              Reactive trader <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>git.io/vKyVG</Link>
             </Text>
           </Slide>
 
