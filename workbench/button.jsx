@@ -10,11 +10,10 @@ import SimpleComponent from '../src/components/simpleComponent.jsx';
 //   fontSize: '5rem',
 //   color: '#ffff00',
 //   backgroundColor: '#00ff00'
-// }
+// };
 
 storiesOf('SimpleComponent', module)
   .add('default', () => <SimpleComponent onClick={action('clicked')}>Click Me</SimpleComponent>)
   // Uncomment when doing the demo.
-  //.add('custom style', () => <SimpleComponent onClick={action('clicked')} style={crazyStyle}>I'm so custom</SimpleComponent>)
-  //.add('disabled', () => <SimpleComponent onClick={action('clicked')} disabled={true}>Can't click this</SimpleComponent>);
-
+  // .add('custom style', () => <SimpleComponent onClick={action('clicked')} style={crazyStyle}>I'm so custom</SimpleComponent>)
+  // .add('disabled', () => <SimpleComponent onClick={action('clicked')} disabled={true}>Can't click this</SimpleComponent>);

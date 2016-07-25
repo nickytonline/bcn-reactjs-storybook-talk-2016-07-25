@@ -57,6 +57,20 @@ export default class Presentation extends React.Component {
             <Text>React JS Barcelona Meetup, July 25th, 2016</Text>
           </Slide>
 
+          <Slide>
+            <Heading caps fit lineHeight={1}>
+              What is a React application made of?
+            </Heading>
+            <br />
+          </Slide>
+
+          <Slide transition={"none"}>
+            <Heading caps fit lineHeight={1}>
+              What is a React application made of?
+            </Heading>
+            (Spoiler: Components)
+          </Slide>
+
           <Slide bgColor="primary">
             <Heading caps lineHeight={1}>
               The Problems
@@ -64,9 +78,9 @@ export default class Presentation extends React.Component {
             <br />
             <Image height={150} src={images.problems} />
             <List>
-              <ListItem>Covering all use cases for a React component is difficult</ListItem>
-              <ListItem>Development can be slow and painful</ListItem>
-              <ListItem>Testing the components in your application is dirty</ListItem>
+              <ListItem>Lack of use cases</ListItem>
+              <ListItem>Slow development</ListItem>
+              <ListItem>Dirtiness</ListItem>
             </List>
           </Slide>
 
@@ -254,7 +268,7 @@ storiesOf('SimpleComponent', module)
             </Text>
             <br />
             <Text size={1} fit lineHeight={1}>
-              Download the source code and slides from <Link href='https://git.io/vKywa' target='_blank'>git.io/vKywa</Link>
+              Download the source code and slides from <Link href='https://git.io/vKSi0' target='_blank'>git.io/vKSi0</Link>
             </Text>
           </Slide>
 
@@ -272,9 +286,6 @@ storiesOf('SimpleComponent', module)
                   The Kadira team <Link href='https://github.com/kadirahq' target='_blank'>github.com/kadirahq</Link>
                 </ListItem>
                 <ListItem>Arunoda <Link href='https://github.com/arunoda' target='_blank'>github.com/arunoda</Link></ListItem>
-                <ListItem>
-                  Reactive trader <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>git.io/vKyVG</Link>
-                </ListItem>
               </List>
             </Text>
           </Slide>
