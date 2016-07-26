@@ -6,7 +6,7 @@ const defaultStyle = {
   fontSize: '2rem',
   cursor: 'pointer',
   color: '#000000'
-}
+};
 
 const disabledStyle = Object.assign({}, defaultStyle, {
   color: '#ff0000',
@@ -24,6 +24,6 @@ const SimpleComponent = (props) => {
       <button onClick={props.onClick} style={props.style || defaultStyle}>{props.children}</button>
     );
   }
-}
+};
 
 export default SimpleComponent;

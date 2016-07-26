@@ -35,7 +35,10 @@ require("normalize.css");
 require("./themes/adaptive/index.css");
 
 const images = {
-  storybook: require("./assets/storybook-loaded.png")
+  storybook: require("./assets/storybook-loaded.png"),
+  storybookDemo: require("./assets/react_storybook_demo.gif"),
+  problems: require("./assets/first_world_problems.png"),
+  surprise: require("./assets/surprise.png")
 };
 
 preloader(images);
@@ -46,182 +49,59 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "zoom"]} transitionDuration={500}>
-          <Slide transition={["zoom"]} bgColor="primary">
+        <Deck transition={["slide", "slide"]} transitionDuration={200}>
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               React Storybook
             </Heading>
             <Text>React JS Barcelona Meetup, July 25th, 2016</Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              About the Speaker
-            </Heading>
-            <List>
-              <ListItem><strike>Nick Taylor</strike> Xan Torres Martin, web developer</ListItem>
-              <ListItem><strike>From Montreal, Quebec, Canada</strike> Girona, Spain</ListItem>
-              <ListItem>Works for Adaptive Financial Consulting Ltd.</ListItem>
-              <ListItem>Find us online at <Link href='http://weareadaptive.com' target='_blank'>http://weareadaptive.com</Link></ListItem>
-              <ListItem>Find me online at <strike><Link href='https://iamdeveloper.com' target='_blank'>https://iamdeveloper.com</Link></strike> <Link href='https://es.linkedin.com/in/xan-torres-a8606846' target='_blank'>https://es.linkedin.com/in/xan-torres-a8606846</Link></ListItem>
-            </List>
-          </Slide>
           <Slide>
-            <Heading size={1} fit caps lineHeight={1}>
-              What We'll Cover
+            <Heading caps fit lineHeight={1}>
+              What is a React application made of?
             </Heading>
+            <br />
+          </Slide>
+
+          <Slide transition={"none"}>
+            <Heading caps fit lineHeight={1}>
+              What is a React application made of?
+            </Heading>
+            (Spoiler: Components)
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading caps lineHeight={1}>
+              The Problems
+            </Heading>
+            <br />
+            <Image height={150} src={images.problems} />
             <List>
-              <ListItem>An overview of React Storybook</ListItem>
-              <ListItem>Setting up React Storybook</ListItem>
-              <ListItem>A demo of React Storybook in action</ListItem>
-              <ListItem>
-                Out of scope but to get mentions:
-                <List>
-                  <ListItem>extending React Storybook</ListItem>
-                  <ListItem>competing projects</ListItem>
-                </List>
-              </ListItem>
+              <ListItem>Lack of use cases</ListItem>
+              <ListItem>Slow development</ListItem>
+              <ListItem>Dirtiness</ListItem>
             </List>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              An Overview of React Storybook
+          <Slide bgColor="primary">
+            <Heading caps lineHeight={1}>
+              The solution
             </Heading>
+            <br />
+            <Image height={400} src={images.storybookDemo}/>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <BlockQuote>
-              <Quote>With React Storybook, you can develop and design UI components outside your app in an isolated environment. It will change how you develop UI components.</Quote>
+          <Slide bgColor="primary">
+            <BlockQuote size={1}>
+              <Quote>With React Storybook, you can develop and design UI components outside your app in an isolated
+                environment. It will change how you develop UI components.</Quote>
               <Cite>Arunoda Susiripala</Cite>
             </BlockQuote>
-            <Text>Source: <Link href="https://voice.kadira.io/introducing-react-storybook-ec27f28de1e2#.wmylm3dx5" target='_blank'>Introducing React Storybook</Link></Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Can create and design components without running your application.</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Can mock props to test different views of your UI, e.g. enabled/disabled.</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Can simulate actions, e.g. click</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Hot reloading allows you to make changes quickly</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Supports React Native</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Showcase your components</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Publish your showcase of components to GitHub</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Setting up React Storybook
-            </Heading>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>
-              Install React Storybook
-            </Text>
-            <br />
-            <CodePane>npm i @kadira/storybook --save-dev</CodePane>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text size={2}>
-              Add an npm script to your package.json
-              <br /><br />
-              <CodePane>
-                  "workbench": "start-storybook -p 9001"
-              </CodePane>
-            </Text>
-            <br />
-            <Text size={3}>Note: The port does not have to be 9001.</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Configure React Storybook
-            </Heading>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <List>
-              <ListItem>Create a folder in the root of your project called <code>.storybook</code></ListItem>
-              <ListItem>In that folder create a file called <code>config.js</code></ListItem>
-            </List>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Add the following code to config.js and save it</Text>
-            <br />
-            <CodePane>{`
-import { configure } from '@kadira/storybook';
-
-function loadStories() {
-    require('../workbench/');
-}
-
-configure(loadStories, module);
-            `}</CodePane>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <List>
-              <ListItem>Create a folder in the root of your project called <code>workbench</code></ListItem>
-              <ListItem>In that folder create a file called <code>index.js</code></ListItem>
-            </List>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>Add the following code to index.js and save it.</Text>
-            <br />
-            <CodePane fit>{`
-import {storiesOf,action} from '@kadira/storybook';
-import React from 'react';
-import SimpleComponent
-  from '../src/components/simpleComponent.jsx';
-
-storiesOf('SimpleComponent', module)
-  .add('default',
-    () => <SimpleComponent onClick={action('clicked')}>
-            Click Me</SimpleComponent>);
-            `}
-            </CodePane>
-            <br />
-            <Text>You've created your first story.</Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text>
-              Now run...
-            </Text>
-            <br />
-            <CodePane>npm run workbench</CodePane>
-            <br />
-            <Text>and open a browser at <Link href='http://localhost:9001' target='storybook'>http://localhost:9001</Link></Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Markdown source={`![Storybook Loaded](${images.storybook.replace("/", "")})`} />
-
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
+          <Slide bgColor="primary">
+            <Heading size={1} caps lineHeight={1}>
               Demo Time
             </Heading>
             <Text size={1} fit lineHeight={1}>
@@ -229,97 +109,209 @@ storiesOf('SimpleComponent', module)
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Use Storybook to edit components of the slide deck
-            </Heading>
-            <br />
-            <Text>
-              <SimpleComponent>I'm the button<br />you saw in the demo</SimpleComponent>&nbsp;&nbsp;<SimpleComponent disabled={true}>I'm the disabled button<br />you saw in the demo</SimpleComponent>
-            </Text>
-            <br />
-            <Heading size={2} fit caps lineHeight={1}>
-              That's right... this slide deck is a React application. Boom... mind blown.
-            </Heading>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Does Anyone Else Do What Storybook Does?
-            </Heading>
-            <Text>
-              At the time of writing, the only project similar to Storybook is Carte Blanche, <Link href='https://github.com/carteb/carte-blanche' target='_blank'>https://github.com/carteb/carte-blanche</Link>.
-            </Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Why We Chose Storybook
-            </Heading>
-            <Text>
-              Adaptive went with Storybook because it is the only tool of its kind that currently supports TypeScript via its extension points.
-            </Text>
-          </Slide>
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1}>
-              Extending/Customizing Storybook
-            </Heading>
+          <Slide bgColor="primary">
+            <Heading>Key benefits</Heading>
             <List>
-              <ListItem>Can customize the webpack configuration for Storybook</ListItem>
-              <ListItem><Link href='https://voice.kadira.io/more-ways-to-extend-react-storybook-fde71847c9f8#.2ouah41np'>More ways to Extend React Storybook</Link></ListItem>
+              <ListItem>Isolation</ListItem>
+              <ListItem>Props mocking</ListItem>
+              <ListItem>Action logger</ListItem>
+              <ListItem>Hot reloading</ListItem>
             </List>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
+            <Heading>Plus</Heading>
+            <List>
+              <ListItem>Extensions</ListItem>
+              <ListItem>Customizable</ListItem>
+              <ListItem>Runs anywhere</ListItem>
+              <ListItem>Showcase your components (<Link href='https://github.io'
+                                                        target='storybook'>github.io</Link>, <Link href='https://storybooks.io'
+                target='storybook'>storybooks.io</Link>...)</ListItem>
+              <ListItem>Supports React Native</ListItem>
+            </List>
+          </Slide>
+
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
-              Source Code and Slides
+              Setting up React Storybook
             </Heading>
-            <Text size={1} fit lineHeight={1}>
-              <Link href='https://github.com/nickytonline/bcn-reactjs-storybook-talk-2016-07-25' target='_blank'>https://github.com/nickytonline/bcn-reactjs-storybook-talk-2016-07-25</Link>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Text>
+              Install React Storybook
+            </Text>
+            <br />
+            <CodePane>npm install @kadira/storybook --save-dev</CodePane>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Text size={2}>
+              Add an npm script to your package.json
+              <br /><br />
+              <CodePane>
+                "workbench": "start-storybook -p 9001"
+              </CodePane>
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
+              Configure React Storybook
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <List>
+              <ListItem>Create a folder in the root of your project called <code>.storybook</code></ListItem>
+              <ListItem>In that folder create a file called <code>config.js</code></ListItem>
+            </List>
+          </Slide>
+          <Slide bgColor="primary">
+            <Text>.storybook/config.js</Text>
+            <br />
+            <CodePane>
+{`import { configure } from '@kadira/storybook';
+
+function loadStories() {
+    require('../workbench/');
+}
+
+configure(loadStories, module);
+`}</CodePane>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <List>
+              <ListItem>Create a folder in the root of your project called <code>workbench</code></ListItem>
+              <ListItem>In that folder create a file called <code>index.js</code></ListItem>
+            </List>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Text>workbench/index.js</Text>
+            <br />
+            <CodePane>
+{`import {storiesOf,action} from '@kadira/storybook';
+import React from 'react';
+import SimpleComponent
+  from '../src/components/simpleComponent.jsx';
+
+storiesOf('SimpleComponent', module)
+  .add('default', () =>
+    <SimpleComponent onClick={action('clicked')}>
+            Click Me</SimpleComponent>);`}
+            </CodePane>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Text>
+              Now run...
+            </Text>
+            <br />
+            <CodePane>npm run workbench</CodePane>
+            <br />
+            <Text>and open a browser at <Link href='http://localhost:9001'
+                                              target='storybook'>http://localhost:9001</Link></Text>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Image height={500} src={images.storybook} />
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading size={1} caps lineHeight={1}>
+              And this?
+            </Heading>
+            <br />
+            <Text>
+              <SimpleComponent>I'm the button<br />you saw in the demo</SimpleComponent>&nbsp;&nbsp;<SimpleComponent
+              disabled={true}>I'm the disabled button<br />you saw in the demo</SimpleComponent>
+            </Text>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Image height={300} src={images.surprise} />
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading size={1} caps lineHeight={1}>
+              Alternative tools
+            </Heading>
+            <br />
+            <Text>
+              UI Harness <Link href='http://www.uiharness.com/' target="_blank">www.uiharness.com</Link>
+            </Text>
+            <br />
+            <Text>
+              Carte Blanche <Link
+              href='https://github.com/carteb/carte-blanche'
+              target='_blank'>github.com/carteb/carte-blanche</Link>.
+            </Text>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading size={1} fit caps lineHeight={1}>
+              Why We Chose Storybook?
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading size={1} fit caps lineHeight={1}>
+              Source Code and Slides
+            </Heading>
+            <br />
+            <Text>
+              Thanks <strong>Nick Taylor</strong>, the creator of this slide, visit him at <Link
+              href='https://iamdeveloper.com' target='_blank'>iamdeveloper.com</Link>
+            </Text>
+            <br />
+            <Text size={1} fit lineHeight={1}>
+              Download the source code and slides from <Link href='https://git.io/vKSi0' target='_blank'>git.io/vKSi0</Link>
+            </Text>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading caps>
               Thanks OSS
             </Heading>
             <Text>
               <List>
                 <ListItem>
-                  I highly recommend using Spectacle for any talks/presentations you give. You can grab it here, <Link href='https://github.com/FormidableLabs/spectacle' target='_blank'>https://github.com/FormidableLabs/spectacle</Link>.
+                  Spectacle <Link
+                  href='https://github.com/FormidableLabs/spectacle' target='_blank'>github.com/FormidableLabs/spectacle</Link>
                 </ListItem>
                 <ListItem>
-                  Thanks to <Link href='https://github.com/arunoda' target='_blank'>Arunoda</Link> and the entire <Link href='https://github.com/kadirahq' target='_blank'>Kadira</Link> team for their massive contributions to Meteor JS and React.
+                  The Kadira team <Link href='https://github.com/kadirahq' target='_blank'>github.com/kadirahq</Link>
                 </ListItem>
-                <ListItem>And a big thank you to Arunoda for reviewing the slide deck.</ListItem>
+                <ListItem>Arunoda <Link href='https://github.com/arunoda' target='_blank'>github.com/arunoda</Link></ListItem>
               </List>
             </Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide bgColor="primary">
             <Heading size={1} fit caps lineHeight={1}>
               Questions?
             </Heading>
           </Slide>
 
           <Slide>
-            <Heading size={2} fit caps lineHeight={1}>
-              <Link href='http://weareadaptive.com' target='_blank'>weareadaptive.com</Link>
-            </Heading>
-            <br /><br /><br /><br />
-            <Heading size={2} fit caps lineHeight={1}>
+            <Heading>About us</Heading>
+            <br />
+            <Text>
+              Find us online at <Link href='http://weareadaptive.com' target='_blank'>weareadaptive.com</Link>
+            </Text>
+            <br />
+            <Text>
               Twitter <Link href='https://twitter.com/weareadaptive' target='_blank'>@weareadaptive</Link>
-            </Heading>
+            </Text>
             <br />
-            <Heading size={1} fit caps lineHeight={1}>
+            <Text>
               Github <Link href='https://github.com/AdaptiveConsulting' target='_blank'>AdaptiveConsulting</Link>
-            </Heading>
-            <br />
-            <Text fit>
-              <Link href='https://github.com/AdaptiveConsulting/ReactiveTraderCloud' target='_blank'>https://github.com/AdaptiveConsulting/ReactiveTraderCloud</Link>
             </Text>
           </Slide>
+
         </Deck>
       </Spectacle>
     );
