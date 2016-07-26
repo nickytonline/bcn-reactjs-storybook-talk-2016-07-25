@@ -268,7 +268,7 @@ storiesOf('SimpleComponent', module)
             </Text>
             <br />
             <Text size={1} fit lineHeight={1}>
-              Download the source code and slides from <Link href='https://git.io/vKSi0' target='_blank'>git.io/vKSi0</Link>
+              Download the source code and slides from <Link href='https://git.io/vKywa' target='_blank'>git.io/vKywa</Link>
             </Text>
           </Slide>
 
