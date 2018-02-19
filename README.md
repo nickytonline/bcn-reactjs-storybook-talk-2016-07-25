@@ -1,4 +1,6 @@
 # BCN ReactJS Talk on React Storybook
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/nickytonline/bcn-reactjs-storybook-talk-2016-07-25.svg)](https://greenkeeper.io/)
 A talk on [React Storybook](https://github.com/kadirahq/react-storybook).
 
 
